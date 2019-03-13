@@ -1,43 +1,51 @@
 # given 2d array print array in spiral form
 def spiral(matrix):
         result = []
-        row =len(matrix)
-        if row == 0:
+        rows =len(matrix)
+        if rows == 0:
             return result
-        l = 0
+        a = 0
         colIndex = len(matrix[0]) -1
-        t = 0
-        b = row-1
+        b = 0
+        rowIndex = rows-1
 
-        while l <= colIndex  and t <= b:
+        while a <= colIndex  and b <= rowIndex:
 
             # move right & grab row
-            for i in range(l, colIndex+1):
-                result.append(matrix[l][i])
+            for i in range(a, colIndex+1):
+                result.append(matrix[a][i])
             #one row down, increment
-            t +=1
+            b +=1
             # move down, start i at next index since already
             #grabbed above
-            for i in range(t, b+1):
+            for i in range(b, rowIndex+1):
                 result.append(matrix[i][colIndex])
             # -1 col since one col is now complete
             colIndex -=1
 
 
-            if t <= b:
-                # move left/back wards starting at 2 or so to
-                # before -1
-                for i in range(colIndex, l-1, -1):
-                    result.append(matrix[b][i])
+            if b <= rowIndex:
+                # move backwards
+                for i in range(colIndex, a-1, -1):
+                    result.append(matrix[rowIndex][i])
                 # -1 a row, one other row complete
-                b -=1
+                rowIndex -=1
 
-            if l <= colIndex:
+            if a <= colIndex:
                 # move up
-                for i in range(b, t-1, -1):
-                    result.append(matrix[i][l])
-                l +=1
+                for i in range(rowIndex, b-1, -1):
+                    result.append(matrix[i][a])
+                a +=1
         return result
+
+# spiral([
+#  [ 1, 2, 3,"a"],
+#  [ 4, 5, 6,"b"],
+#  [ 7, 8, 9 ,"c"],
+#  [10,11,12,"d"]
+# ])
+
+
 
 # def spiral(matrix):
 #     # first row: everything to the right
@@ -58,11 +66,7 @@ def spiral(matrix):
 #     return res
 #
 #
-print spiral([
- [ 1, 2, 3 ],
- [ 4, 5, 6 ],
- [ 7, 8, 9 ]
-])
+
 
 
 
