@@ -16,27 +16,27 @@ class TestSum(unittest.TestCase):
           [2, 8, 7, 4, 1, 9, 6, 3, 5],
           [3, 4, 5, 2, 8, 6, 1, 7, 9]]
         checker_for_only_this_grid = Sudoku_Checker(grid)
-        self.assertTrue(checker_for_only_this_grid.board_validater())
+        self.assertTrue(checker_for_only_this_grid.board_validater(grid))
 
 
-    # def testwillWork2(self):
-    #     """
-    #     Check to return False
-    #     """
-    #     grid = [
-    #       [5, 3, 4, 6, 7, 8, 9, 1, 2],
-    #       [6, 7, 2, 1, 9, 0, 3, 4, 8],
-    #       [1, 0, 0, 3, 4, 2, 5, 6, 0],
-    #       [8, 5, 9, 7, 6, 1, 0, 2, 0],
-    #       [4, 2, 6, 8, 5, 3, 7, 9, 1],
-    #       [7, 1, 3, 9, 2, 4, 8, 5, 6],
-    #       [9, 0, 1, 5, 3, 7, 2, 1, 4],
-    #       [2, 8, 7, 4, 1, 9, 6, 3, 5],
-    #       [3, 0, 0, 4, 8, 1, 1, 7, 9]
-    #     ]
-    #     result = Sudoku_Checker.board_validater(grid)
-    #     self.assertFalse(result)
-    #
+    def testwillWork2(self):
+        """
+        Check to return False
+        """
+        grid = [
+          [5, 3, 4, 6, 7, 8, 9, 1, 2],
+          [6, 7, 2, 1, 9, 0, 3, 4, 8],
+          [1, 0, 0, 3, 4, 2, 5, 6, 0],
+          [8, 5, 9, 7, 6, 1, 0, 2, 0],
+          [4, 2, 6, 8, 5, 3, 7, 9, 1],
+          [7, 1, 3, 9, 2, 4, 8, 5, 6],
+          [9, 0, 1, 5, 3, 7, 2, 1, 4],
+          [2, 8, 7, 4, 1, 9, 6, 3, 5],
+          [3, 0, 0, 4, 8, 1, 1, 7, 9]
+        ]
+        result = Sudoku_Checker(grid)
+        self.assertFalse(result.board_validater())
+
     # def testwontWork(self):
     #     """
     #     Check to return False
