@@ -1,5 +1,4 @@
 # # only one or two steps at a time
-# # Maybe -1 from m and try how many times one can go up the stairs
 # Climbing Stairs: Time - O(n), space: O(n)
 #  by ramineedi
 # You can put it in a function or not.

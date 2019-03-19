@@ -10,10 +10,10 @@ def median(c,b):
     c = sorted(c)
     q = len(c)/2
     if len(c) % 2 ==0:
-        me = c[:q][-1] + c[q:][0]/2
+        me = (c[:q][-1] + c[q:][0])/2
         return me
     else:
         me = c[q:][0]
         return me
-median([1,12,30,4],[6,2,1,7])
-median([1,12,30,4],[6,200,9])
+print median([1,12,30,4],[6,2,1,7])
+print median([1,12,30,4],[6,200,9])
