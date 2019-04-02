@@ -1,10 +1,11 @@
-def flat(a):
+def flatter(a):
     result = {}
-    # check if value is 
+    # check if value is
 
     for i in a:
         if a[i] not in result:
-            result[i]
+            result[i] = a[i]
+    return result
 
 
 
@@ -21,4 +22,4 @@ hold = {
     }
 }
 
-flat(hold)
+flatter(hold)
