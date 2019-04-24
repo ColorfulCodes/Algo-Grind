@@ -1,10 +1,7 @@
 import unittest
-
 from spiralMatrix import spiral
-
-
 class TestSum(unittest.TestCase):
-    def test_list_right(self):
+    def test_list_exists(self):
         """
         Test that the grid is not empty
         """
@@ -16,7 +13,7 @@ class TestSum(unittest.TestCase):
         result = spiral(grid)
         self.assertTrue(len(result)>0)
 
-    def test_list_right2(self):
+    def test_list_correct(self):
         """
         Test that result is equal to correct answer
         """

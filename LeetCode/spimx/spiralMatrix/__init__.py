@@ -1,49 +1,42 @@
-# given 2d array print array in spiral form
 def spiral(matrix):
         result = []
         rows =len(matrix)
-        if rows == 0:
-            return result
-        a = 0
         colIndex = len(matrix[0]) -1
+        a = 0
         b = 0
         rowIndex = rows-1
 
-        while a <= colIndex  and b <= rowIndex:
+        if rows == 0:
+            return result
 
-            # move right & grab row
+        while a <= colIndex  and b <= rowIndex:
             for i in range(a, colIndex+1):
                 result.append(matrix[a][i])
-            #one row down, increment
             b +=1
-            # move down, start i at next index since already
-            #grabbed above
+
             for i in range(b, rowIndex+1):
                 result.append(matrix[i][colIndex])
-            # -1 col since one col is now complete
             colIndex -=1
-
-
             if b <= rowIndex:
-                # move backwards
                 for i in range(colIndex, a-1, -1):
                     result.append(matrix[rowIndex][i])
-                # -1 a row, one other row complete
                 rowIndex -=1
 
             if a <= colIndex:
-                # move up
                 for i in range(rowIndex, b-1, -1):
                     result.append(matrix[i][a])
                 a +=1
         return result
 
-# spiral([
-#  [ 1, 2, 3,"a"],
-#  [ 4, 5, 6,"b"],
-#  [ 7, 8, 9 ,"c"],
-#  [10,11,12,"d"]
-# ])
+print spiral([
+ [ 1, 2, 3,"a"],
+ [ 4, 5, 6,"b"],
+ [ 7, 8, 9 ,"c"],
+ [10,11,12,"d"]
+])
+
+
+
 
 
 
