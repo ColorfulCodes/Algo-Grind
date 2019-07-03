@@ -1,0 +1,29 @@
+def get_cheapest_cost(rootNode):
+  if rootNode == None:
+    return 0
+  stack = []
+  minimum = float("Inf")
+  stack.append([rootNode,rootNode.val])
+  while (len(stack) > 0):
+    current,total = stack.pop()
+    if current.left:
+      stack.append([current.left,total+current.left.val])
+    if current.right:
+      stack.append([current.right,total+current.right.val])
+    if not current.left and not current.right:
+      if total < minimum:
+        minimum = total
+  return minimum
+      ##########################################
+# Use the helper code below to implement #
+# and test your function above           #
+##########################################
+
+# A node
+class Node:
+
+  # Constructor to create a new node
+  def __init__(self, cost):
+    self.cost = cost
+    self.children = []
+    self.parent = None
