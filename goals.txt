@@ -23,3 +23,4 @@ schedule G
 1 interviewing.io
 pramp to 50
 review pramp
+https://www.reddit.com/r/cscareerquestions/comments/apu3ni/a_list_of_questions_i_was_asked_at_top_tech/
