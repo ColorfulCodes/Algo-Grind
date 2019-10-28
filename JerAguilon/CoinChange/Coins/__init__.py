@@ -12,5 +12,8 @@ def coinChange(coins, amount):
     else:
       return -1
 
-# coinChange([1, 2, 5],11)
-# coinChange(0,11)
+coinChange([1, 2, 5],11)
+coinChange(0,11)
+
+
+

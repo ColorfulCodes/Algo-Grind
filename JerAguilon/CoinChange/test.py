@@ -9,7 +9,6 @@ class TestSum(unittest.TestCase):
         result = coinChange([1, 2, 5],11)
         self.assertTrue(result == 3)
 
-
     def test_incorrectly(self):
         """
         Test failure: there are a minimum of 2 coins for 11.
@@ -25,6 +24,6 @@ class TestSum(unittest.TestCase):
         with self.assertRaises(ValueError):
             coinChange([],11)
 
-
 if __name__ == '__main__':
     unittest.main()
+
