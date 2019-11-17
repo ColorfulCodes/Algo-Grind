@@ -13,20 +13,21 @@
 
 def minWindow(s, t):
     count = 0
-    hold = {}
     start = 0
-    exists = False
+    hold = {}
     smallest = s
+    exists = False
+
     
-    for i in t:
-        if i not in hold:
-            hold[i] = 1
+    for letter in t:
+        if letter not in hold:
+            hold[letter] = 1
             count +=1
         else:
-            hold[i] += 1
+            hold[letter] += 1
     
     
-    for end in xrange(len(s)):
+    for end in range(len(s)):
         if s[end] not in hold:
             continue
         hold[s[end]] -= 1
@@ -34,9 +35,9 @@ def minWindow(s, t):
             count -= 1
             
         while count == 0:
+            exists = True
             if len(s[start:end+1]) < len(smallest):
                 smallest = s[start:end+1]
-                exists = True
             goLeft = s[start]
             start += 1
             if goLeft not in hold:
@@ -45,14 +46,14 @@ def minWindow(s, t):
             if hold[goLeft] == 1:
                 count += 1
                 break
+    
     if exists == False:
         return ""
-                
     return smallest
     
 
     
-minWindow("ADOABECODEBANC", "ABC")
+minWindow("ADOBECODEBANC", "ABC")
 
 
 
