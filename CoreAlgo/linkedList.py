@@ -36,15 +36,16 @@ class unorderedList:
         while current != None:
             count += 1
             current = current.getNext()
-
         return count
 
-    def search(self):
+    def search(self,item):
         current = self.head
         found = False
         while current != None and not found:
             if current.getData() == item:
                 found = True
+            else:
+                current = current.getNext()
         return found
 
     def remove(self,item):
@@ -58,8 +59,31 @@ class unorderedList:
             else:
                 previous = current
                 current = current.getNext()
-        if previous = None:
+        if previous == None:
             self.head = current.getNext()
 
         else:
-            previous.setNext(current.getNext)
+            previous.setNext(current.getNext())
+
+mylist = unorderedList()
+mylist.add(31)
+mylist.add(77)
+mylist.add(17)
+mylist.add(93)
+mylist.add(26)
+mylist.add(54)
+
+print(mylist.size())
+print(mylist.search(93))
+print(mylist.search(100))
+
+# Now add 100
+mylist.add(100)
+print(mylist.search(100))
+print(mylist.size())
+
+mylist.remove(54)
+print(mylist.size())
+mylist.remove(93)
+print(mylist.size())
+
