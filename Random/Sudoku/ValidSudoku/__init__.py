@@ -2,19 +2,25 @@ class Sudoku_Checker:
   def __init__(self,board):
     self.board = board
 
+  
   def board_validater(self,board):
-    return self.checkRows(board) == True and self.checkCols(board) == True and self.checkSquares(board) == True
+    return self.checkRows(board) == True and self.checkCols(board) == True \
+     and self.checkSquares(board) == True
 
+ 
   def compareAll(self,a):
       compare = range(1,10)
+      # if Python 3 compare = [1,2,3,4,5,6,7,8,9]
       return sorted(a) == compare
       
+  
   def checkRows(self,board):
       for i in self.board:
           if not self.compareAll(i):
               return False
       return True
 
+  
   def checkCols(self,board):
       for i in range(len(board)):
           hold = []
@@ -24,6 +30,7 @@ class Sudoku_Checker:
               return False
       return True
 
+  
   def checkSquares(self,board):
     for i in range(0, 9, 3):
         for j in range(0, 9, 3):
@@ -44,3 +51,6 @@ board = [  [5, 3, 4, 6, 7, 8, 9, 1, 2],
           [3, 4, 5, 2, 8, 6, 1, 7, 9]]
 s = Sudoku_Checker(board)
 print s.board_validater(board)
+
+
+
